@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    
+    <ul>
+        <li>Osoba(<u>login,</u>heslo)</li>
+    </ul>
+
+    <ul>
+        <li>Osobní udaje(<u>login,</u><u>přimení jmeno datum narození</u> PSČ, ulice, ČP)<ul>
+        <li>FK:login  ⊆ osoba(login)</li>
+    </ul></li>
+    </ul>
+
+
+    <ul>
+        <li>telefoní číslo(<u>jmeno přimení datum narození</u>, telefoní číslo)<ul>
+        <li>FK:jmeno přimení datum narození  ⊆ Osobní udaje(jmeno přimení datum narození)</li>
+        </ul></li>
+    </ul> 
+
+   <ul>
+        <li>Zaměstanec(<u>login,</u> <u>  číslo zaměstanece  </u>, praxe, mzda, uvazek)<ul>
+        <li>FK:login  ⊆ osoba(login)</li>
+        </ul></li>
+    </ul> 
+    
+
+   
+
+    <ul>
+        <li>Administrativní pracovnik(<u>login</u>, <u>číslo zaměstanece</u>, pozice, oddělení)<ul>
+        <li>FK:login  ⊆ osoba(login)</li>
+        <li>FK:číslo zaměstanece  ⊆ Zaměstanec(číslo zaměstanece)</li>
+    </ul></li>
+    </ul>
+
+   
+    
+     <ul>
+        <li>Učitel(<u>login</u>, <u> číslo zaměstanece </u>, <u>číslo diplomu</u>, vzdělaní, předmět)<ul>
+        <li>FK:login  ⊆ osoba(login)</li>
+        <li>FK:číslo zaměstanece ⊆ Zaměstanec(číslo zaměstanece)</li>
+    </ul></li>
+    </ul>
+   
+
+    
+
+<ul>
+        <li>Učí_v(<u>číslo diplomu, číslo místnosti</u>)<ul>
+        <li>FK:číslo diplomu ⊆ učitel(číslo diplomu)</li>
+        <li>FK:číslo místnosti ⊆ místnost(číslo místnosti)</li>
+    </ul></li>
+    </ul>
+    
+
+<ul>
+        <li>Student(<u>login</u>, uspěšnost, %absence, státní příslušnost)<ul>
+        <li>FK:login  ⊆ osoba(login)</li>
+    </ul></li>
+    </ul>
+
+   
+
+<ul>
+        <li>Studuje_v(<u>login, číslo místnosti</u>)<ul>
+        <li>FK login:⊆ osoba(login)</li>
+        <li>FK číslo místnosti:⊆ místnost(číslo místnosti)</li>
+    </ul></li>
+</ul>
+   
+
+<ul>
+        <li>Chodí na(<u>login, číslo kurzu</u>)<ul>
+        <li>FK:login ⊆ osoba(login)</li>
+        <li>FK:číslo kurzu ⊆ jazykový kurz(číslo kurzu)</li>
+    </ul></li>
+</ul>
+
+
+   
+
+<ul>
+        <li>zkouše(<u>login, datum konaní, číslo místnosti, číslo kurzu</u>)<ul>
+        <li>FK:login ⊆ Student(login)</li>
+        <li>FK:datum konaní číslo místnosti číslo kurzu ⊆ zkouška(datum konaní číslo místnosti číslo kurzu)</li>
+        </ul></li>
+        
+</ul>
+
+   
+
+<ul>
+        <li>Místnost(<u>číslo místnosti</u>, kapacita)<ul>
+        </ul></li>
+</ul>
+
+
+<ul>
+        <li>Jazykový kurz(<u>číslo kurzu</u>, <u>číslo diplomu</u>,  uroveň, akademický rok)<ul>
+        <li>FK:číslo diplomu ⊆učitel(číslo diplomu)</li>
+    </ul></li>
+</ul>
+
+    
+
+<ul>
+        <li>Nutnost(<u>číslo kurzu</u>, <u>číslo kurzu</u>, uroveň)<ul>
+        <li>FK:číslo kurzu ⊆ jazykový kurz(číslo kurzu)</li>
+        </ul></li>
+</ul>
+
+
+  
+
+<ul>
+        <li>Zkouška(<u>číslo místnosti, číslo kurzu, datum konaní</u> <u>číslo duplomu</u> % ušpěšnosti, doba konaní)<ul>
+        <li>FK:číslo diplomu ⊆ učitel(číslo diplomu)</li>
+        <li>FK:číslo místnosti ⊆ místnost(číslo místnosti)</li>
+        <li>FK:číslo kurzu ⊆ jazykový kurz(číslo kurzu)</li>
+        </ul></li>
+</ul>
+
+
+    
+
+<ul>
+        <li>Certifikat(<u>číslo certifikatu, datum výdaní</u>, uroveň, platnost, týp, login)<ul>
+        <li>FK:login  ⊆ Student(login)</li>
+        </ul></li>
+
+    </ul>
+     
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
